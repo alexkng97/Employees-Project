@@ -1,6 +1,5 @@
 package org.sparta.alex.model;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 
 import java.io.FileReader;
 import java.io.IOException;

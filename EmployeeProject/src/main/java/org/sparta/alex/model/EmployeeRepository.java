@@ -72,7 +72,7 @@ public class EmployeeRepository {
 
         employeeList.removeAll(invalidList);
 
-        System.out.println(invalidList.size());
+        System.out.println("Amount of Duplicates found: " +invalidList.size());
     }
 
 
