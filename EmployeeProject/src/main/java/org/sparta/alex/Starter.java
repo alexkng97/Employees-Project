@@ -14,7 +14,9 @@ public class Starter {
 
         String url = "jdbc:mysql://localhost:3306/tester";
         EmployeeDAO.connectToDB(url);
-
+        
+        EmployeeDAO.insertListOfEmployees(employeeRepository.getEmployeeList());
+      // EmployeeDAO.queryDB("SELECT * FROM tester.employees");
 
     }
 }

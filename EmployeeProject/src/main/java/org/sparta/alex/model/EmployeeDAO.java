@@ -1,8 +1,12 @@
 package org.sparta.alex.model;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class EmployeeDAO {
@@ -35,43 +39,74 @@ public class EmployeeDAO {
     }
 
     public static void queryDB(String query){
-
+        StringBuilder sb = new StringBuilder();
         Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
-                System.out.println(resultSet.getInt(1));
-                System.out.println(resultSet.getString(2));
-                System.out.println(resultSet.getString(3));
-                System.out.println(resultSet.getString(4));
-                System.out.println(resultSet.getString(5));
-                System.out.println(resultSet.getString(6));
-                System.out.println(resultSet.getString(7));
-                System.out.println(resultSet.getDate(8));
-                System.out.println(resultSet.getDate(9));
-                System.out.println(resultSet.getInt(10));
+                sb.append(resultSet.getString(1));
+                sb.append(resultSet.getString(2));
+                sb.append(resultSet.getString(3));
+                sb.append(resultSet.getString(4));
+                sb.append(resultSet.getString(5));
+                sb.append(resultSet.getString(6));
+                sb.append(resultSet.getString(7));
+                sb.append(resultSet.getDate(8));
+                sb.append(resultSet.getDate(9));
+                sb.append(resultSet.getInt(10));
+                sb.append("\n");
             }
 
         }catch (SQLException e){
             e.printStackTrace();
         }
+        System.out.println(sb.toString());
 
     }
 
 
-    public static void insertData(int id, String namePrefix, String email){
+    public static void insertData(String emp_ID, String namePrefix, String firstName, String middleInitial, String lastName,
+                                  String gender, String email, LocalDate dob, LocalDate dateOfJoining, int salary){
         try {
-            Statement statement = connection.createStatement();
-            PreparedStatement preparedStatement = connection.prepareStatement("insert INTO `tester`.`user` (`id`,`name`,`email`) values (?,?,?)");
-            preparedStatement.setInt(1,id);
+            //Statement statement = connection.createStatement();
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "insert INTO `tester`.`employees` (`emp_id`,`name_prefix`,`first_name`, `middle_initial`, " +
+                            "`last_name`, `gender`,`email`, `dob`, `date_joined`, `salary`) " +
+                            "values (?,?,?,?,?,?,?,?,?,?)");
+
+            preparedStatement.setString(1,emp_ID);
             preparedStatement.setString(2,namePrefix);
-            preparedStatement.setString(3, email);
+            preparedStatement.setString(3, firstName);
+            preparedStatement.setString(4, middleInitial);
+            preparedStatement.setString(5, lastName);
+            preparedStatement.setString(6, gender);
+            preparedStatement.setString(7, email);
+            preparedStatement.setDate(8, Date.valueOf(dob));
+            preparedStatement.setDate(9, Date.valueOf(dateOfJoining));
+            preparedStatement.setInt(10, salary);
 
             preparedStatement.execute();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }
+
+
+    }
+
+    public static void insertSingleEmployee(EmployeeDTO employee){
+        insertData(employee.getEmp_ID(), employee.getNamePrefix(), employee.getFirstName(), employee.getMiddleInitial(),
+                employee.getLastName(), employee.getGender(), employee.getEmail(),employee.getDob(), employee.getDateOfJoining(),
+                employee.getSalary());
+
+
+    }
+
+    public static void insertListOfEmployees(ArrayList<EmployeeDTO> employeeList){
+        System.out.println("Populating Database with Employee List...");
+        for(EmployeeDTO employee: employeeList){
+            insertSingleEmployee(employee);
         }
 
 

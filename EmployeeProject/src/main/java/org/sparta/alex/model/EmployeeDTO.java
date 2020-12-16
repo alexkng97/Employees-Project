@@ -1,19 +1,21 @@
 package org.sparta.alex.model;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class EmployeeDTO {
-    String emp_ID;
-    String namePrefix;
-    String firstName;
-    String middleInitial;
-    String lastName;
-    String gender;
-    String email;
-    LocalDate dob;
-    LocalDate dateOfJoining;
-    int salary;
+    private String emp_ID;
+    private String namePrefix;
+    private String firstName;
+    private String middleInitial;
+    private String lastName;
+    private String gender;
+    private String email;
+    private LocalDate dob;
+    private LocalDate dateOfJoining;
+    private int salary;
 
 
     public EmployeeDTO(String emp_ID, String namePrefix, String firstName, String middleInitial, String lastName,
@@ -95,7 +97,8 @@ public class EmployeeDTO {
     }
 
     public void setDob(String dob) {
-        this.dob = LocalDate.parse(dob, DateTimeFormatter.ofPattern("M[M]/d[d]/yyyy"));;
+        this.dob = LocalDate.parse(dob, DateTimeFormatter.ofPattern("M[M]/d[d]/yyyy"));
+        ;
     }
 
     public LocalDate getDateOfJoining() {
@@ -114,7 +117,8 @@ public class EmployeeDTO {
         this.salary = Integer.valueOf(salary);
     }
 
-    public String toString(){
+
+    public String toString() {
         return "Employee " + emp_ID + ", " + namePrefix + " " + firstName + " " + middleInitial + " " + lastName;
     }
 
