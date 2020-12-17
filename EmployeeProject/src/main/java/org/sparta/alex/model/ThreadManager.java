@@ -14,6 +14,7 @@ public class ThreadManager {
         splitList = new ArrayList<>(size);
 
     }
+
     public void splitEmployeeList(){
 
         int startIndexOfSplit = 0;
@@ -36,7 +37,6 @@ public class ThreadManager {
     }
 
     public void initAndRunThreads(){
-
         try {
             employeeThreads = new Thread[size];
 
@@ -56,11 +56,5 @@ public class ThreadManager {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
 
 }

@@ -1,5 +1,7 @@
 package org.sparta.alex.model;
 
+import org.sparta.alex.controller.CSVWriter;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -85,11 +87,11 @@ public class EmployeeRepository {
 
         employeeList.removeAll(invalidList);
 
-        System.out.println("Amount of duplicate records found: " + invalidList.size());
+        System.out.println("\tAmount of duplicate records found: " + invalidList.size());
     }
 
-    public static void writeInvalidToFile(String path){
-
+    public void writeInvalidToFile(){
+        CSVWriter.writeListToFile(invalidList);
 
     }
 

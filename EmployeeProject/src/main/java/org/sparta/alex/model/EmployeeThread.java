@@ -16,19 +16,18 @@ public class EmployeeThread implements Runnable{
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + " running");
+        System.out.println(Thread.currentThread().getName() + " started");
         long start = 0;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tester?rewriteBatchedStatements=true","root","spartaglobal");
             start = System.currentTimeMillis();
             EmployeeDAO.insertInBatches(employeeList,connection);
             connection.close();
-            System.out.println(Thread.currentThread().getName() + " complete");
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + " took " + (System.currentTimeMillis() - start) + " ms");
+
+        System.out.println(Thread.currentThread().getName() + " complete! Took " + (System.currentTimeMillis() - start) + " ms");
     }
 }

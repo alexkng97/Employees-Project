@@ -8,6 +8,7 @@ public class Starter {
 
     public static void main(String[] args) {
 
+        long startTotal = System.currentTimeMillis();
         System.out.println("Reading in .csv file...");
         long startReadFile = System.currentTimeMillis();
         EmployeeRepository employeeRepository = CSVReader.readValues("src/main/resources/EmployeeRecordsLarge.csv");
@@ -16,9 +17,11 @@ public class Starter {
         System.out.println("Filtering .csv file...");
         long startFilter = System.currentTimeMillis();
         employeeRepository.filterEmployees();
-        System.out.println("Time taken to filter out invalid data: " + (System.currentTimeMillis() - startFilter) + " ms");
-        System.out.println("Number of valid employee records: " + employeeRepository.getEmployeeList().size());
 
+        System.out.println("\tNumber of valid employee records: " + employeeRepository.getEmployeeList().size());
+        System.out.println("\tTime taken to filter out invalid data: " + (System.currentTimeMillis() - startFilter) + " ms");
+
+        employeeRepository.writeInvalidToFile();
 
         String url = "jdbc:mysql://localhost:3306/tester";
         long startConnection = System.currentTimeMillis();
@@ -30,6 +33,8 @@ public class Starter {
         ThreadManager threadManager = new ThreadManager(employeeRepository.getEmployeeList(), 20);
         threadManager.splitEmployeeList();
         threadManager.initAndRunThreads();
+
+        System.out.println("Time for total process: " + (System.currentTimeMillis() - startTotal) + " ms");
 
     }
 }
