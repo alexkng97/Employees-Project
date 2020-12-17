@@ -19,10 +19,9 @@ public class EmployeeThread implements Runnable{
         System.out.println(Thread.currentThread().getName() + " running");
         long start = 0;
         try {
-
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tester","root","spartaglobal");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tester?rewriteBatchedStatements=true","root","spartaglobal");
             start = System.currentTimeMillis();
-            EmployeeDAO.insertListOfEmployees(employeeList,connection);
+            EmployeeDAO.insertInBatches(employeeList,connection);
             connection.close();
             System.out.println(Thread.currentThread().getName() + " complete");
 

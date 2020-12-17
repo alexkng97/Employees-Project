@@ -111,6 +111,41 @@ public class EmployeeDAO {
     }
 
 
+    public static void insertInBatches(ArrayList<EmployeeDTO> employeeList, Connection thisConnection)  {
+
+        try {
+            PreparedStatement preparedStatement = thisConnection.prepareStatement(
+                    "insert INTO `tester`.`employees` (`emp_id`,`name_prefix`,`first_name`, `middle_initial`, " +
+                            "`last_name`, `gender`,`email`, `dob`, `date_joined`, `salary`) " +
+                            "values (?,?,?,?,?,?,?,?,?,?)");
+
+            for(EmployeeDTO employee : employeeList){
+                preparedStatement.setString(1,employee.getEmp_ID());
+                preparedStatement.setString(2,employee.getNamePrefix());
+                preparedStatement.setString(3, employee.getFirstName());
+                preparedStatement.setString(4, employee.getMiddleInitial());
+                preparedStatement.setString(5, employee.getLastName());
+                preparedStatement.setString(6, employee.getGender());
+                preparedStatement.setString(7, employee.getEmail());
+                preparedStatement.setDate(8, Date.valueOf(employee.getDob()));
+                preparedStatement.setDate(9, Date.valueOf(employee.getDateOfJoining()));
+                preparedStatement.setInt(10, employee.getSalary());
+
+                preparedStatement.addBatch();
+            }
+
+            preparedStatement.executeBatch();
+
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
+
+
 
 
 }

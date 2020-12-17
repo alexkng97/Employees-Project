@@ -3,9 +3,6 @@ package org.sparta.alex;
 import org.sparta.alex.controller.CSVReader;
 import org.sparta.alex.model.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Starter {
 
 
@@ -27,11 +24,6 @@ public class Starter {
         long startConnection = System.currentTimeMillis();
         EmployeeDAO.connectToDB(url);
         System.out.println("Time taken to connect to database: " + (System.currentTimeMillis() - startConnection) + " ms");
-
-//        long start = System.currentTimeMillis();
-//        EmployeeDAO.insertListOfEmployees(employeeRepository.getEmployeeList());
-//        System.out.println("Time taken to populate database: " + (System.currentTimeMillis() - start) +" ms" );
-        // EmployeeDAO.queryDB("SELECT * FROM tester.employees");
 
 
         System.out.println("---------THREADS-----------");
