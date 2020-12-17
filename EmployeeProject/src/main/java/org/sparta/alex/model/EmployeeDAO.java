@@ -66,10 +66,9 @@ public class EmployeeDAO {
 
 
     public static void insertData(String emp_ID, String namePrefix, String firstName, String middleInitial, String lastName,
-                                  String gender, String email, LocalDate dob, LocalDate dateOfJoining, int salary){
+                                  String gender, String email, LocalDate dob, LocalDate dateOfJoining, int salary, Connection thisConnection){
         try {
-            //Statement statement = connection.createStatement();
-            PreparedStatement preparedStatement = connection.prepareStatement(
+            PreparedStatement preparedStatement = thisConnection.prepareStatement(
                     "insert INTO `tester`.`employees` (`emp_id`,`name_prefix`,`first_name`, `middle_initial`, " +
                             "`last_name`, `gender`,`email`, `dob`, `date_joined`, `salary`) " +
                             "values (?,?,?,?,?,?,?,?,?,?)");
@@ -94,18 +93,18 @@ public class EmployeeDAO {
 
     }
 
-    public static void insertSingleEmployee(EmployeeDTO employee){
+    public static void insertSingleEmployee(EmployeeDTO employee,Connection thisConnection){
         insertData(employee.getEmp_ID(), employee.getNamePrefix(), employee.getFirstName(), employee.getMiddleInitial(),
                 employee.getLastName(), employee.getGender(), employee.getEmail(),employee.getDob(), employee.getDateOfJoining(),
-                employee.getSalary());
+                employee.getSalary(), thisConnection);
 
 
     }
 
-    public static void insertListOfEmployees(ArrayList<EmployeeDTO> employeeList){
+    public static void insertListOfEmployees(ArrayList<EmployeeDTO> employeeList, Connection thisConnection){
         System.out.println("Populating Database with Employee List...");
         for(EmployeeDTO employee: employeeList){
-            insertSingleEmployee(employee);
+            insertSingleEmployee(employee, thisConnection);
         }
 
 

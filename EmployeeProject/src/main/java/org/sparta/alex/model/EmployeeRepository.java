@@ -6,13 +6,14 @@ import java.util.stream.Collectors;
 public class EmployeeRepository {
     private ArrayList<EmployeeDTO> employeeList;
     private ArrayList<EmployeeDTO> invalidList;
-
     private Map<String,Integer> employeeIds;
+    private Map<String,Integer> employeeEmails;
 
     public EmployeeRepository() {
         this.employeeList = new ArrayList<>();
         this.invalidList = new ArrayList<>();
         this.employeeIds = new HashMap<>();
+        this.employeeEmails = new HashMap<>();
     }
 
     public ArrayList<EmployeeDTO> getEmployeeList() {
@@ -41,6 +42,14 @@ public class EmployeeRepository {
         currentEmployee.setLastName(split[4]);
         currentEmployee.setGender(split[5]);
         currentEmployee.setEmail(split[6]);
+
+        if(!employeeEmails.containsKey(split[6])){
+            employeeEmails.put(split[6],1);
+        }else{
+            int value = employeeEmails.get(split[6]) + 1;
+            employeeEmails.put(split[6],value);
+        }
+
         currentEmployee.setDob(split[7]);
         currentEmployee.setDateOfJoining(split[8]);
         currentEmployee.setSalary(split[9]);
@@ -49,30 +58,39 @@ public class EmployeeRepository {
             invalidList.add(currentEmployee);
         }
 
-
         employeeList.add(currentEmployee);
 
 
     }
 
-    public void filterEmployeeId(){
-        Map<String, Integer> duplicates =
+    public void filterEmployees(){
+        Map<String, Integer> duplicateIDs =
                 employeeIds.entrySet()
                 .stream()
                 .filter(e-> e.getValue() > 1)
                 .collect(Collectors.toMap(e-> e.getKey(), e -> e.getValue()));
 
+        Map<String, Integer> duplicateEmails =
+                employeeEmails.entrySet()
+                .stream()
+                .filter(e -> e.getValue() > 1)
+                .collect(Collectors.toMap(e-> e.getKey(), e -> e.getValue()));
+
 
         for(EmployeeDTO employee : this.employeeList){
-            if(duplicates.containsKey(employee.getEmp_ID())){
+            if(duplicateIDs.containsKey(employee.getEmp_ID()) || duplicateEmails.containsKey(employee.getEmail())){
                 invalidList.add(employee);
             }
         }
 
-
         employeeList.removeAll(invalidList);
 
-        System.out.println("Amount of Duplicates found: " +invalidList.size());
+        System.out.println("Amount of duplicate records found: " + invalidList.size());
+    }
+
+    public static void writeInvalidToFile(String path){
+
+
     }
 
 
