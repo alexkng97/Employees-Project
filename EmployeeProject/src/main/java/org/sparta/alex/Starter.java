@@ -12,7 +12,10 @@ public class Starter {
     public static void main(String[] args) {
 
         System.out.println("Reading in .csv file...");
-        EmployeeRepository employeeRepository = CSVReader.readValues("src/main/resources/EmployeeRecords.csv");
+        long startReadFile = System.currentTimeMillis();
+        EmployeeRepository employeeRepository = CSVReader.readValues("src/main/resources/EmployeeRecordsLarge.csv");
+        System.out.println("Time taken to read in data: " + (System.currentTimeMillis() - startReadFile) + " ms");
+
         System.out.println("Filtering .csv file...");
         long startFilter = System.currentTimeMillis();
         employeeRepository.filterEmployees();
@@ -28,12 +31,11 @@ public class Starter {
 //        long start = System.currentTimeMillis();
 //        EmployeeDAO.insertListOfEmployees(employeeRepository.getEmployeeList());
 //        System.out.println("Time taken to populate database: " + (System.currentTimeMillis() - start) +" ms" );
-       // EmployeeDAO.queryDB("SELECT * FROM tester.employees");
-
+        // EmployeeDAO.queryDB("SELECT * FROM tester.employees");
 
 
         System.out.println("---------THREADS-----------");
-        ThreadManager threadManager = new ThreadManager(employeeRepository.getEmployeeList(), 15);
+        ThreadManager threadManager = new ThreadManager(employeeRepository.getEmployeeList(), 20);
         threadManager.splitEmployeeList();
         threadManager.initAndRunThreads();
 

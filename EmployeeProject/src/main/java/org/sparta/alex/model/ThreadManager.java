@@ -11,7 +11,6 @@ public class ThreadManager {
     public ThreadManager(ArrayList<EmployeeDTO> employeeList, int size){
         this.size = size;
         this.employeeList = employeeList;
-       // employeeThreads = new Thread[size];
         splitList = new ArrayList<>(size);
 
     }

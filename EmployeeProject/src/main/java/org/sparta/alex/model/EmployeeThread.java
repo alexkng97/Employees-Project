@@ -23,6 +23,7 @@ public class EmployeeThread implements Runnable{
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tester","root","spartaglobal");
             start = System.currentTimeMillis();
             EmployeeDAO.insertListOfEmployees(employeeList,connection);
+            connection.close();
             System.out.println(Thread.currentThread().getName() + " complete");
 
 

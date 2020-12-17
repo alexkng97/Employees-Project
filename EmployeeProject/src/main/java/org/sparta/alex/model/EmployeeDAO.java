@@ -102,7 +102,7 @@ public class EmployeeDAO {
     }
 
     public static void insertListOfEmployees(ArrayList<EmployeeDTO> employeeList, Connection thisConnection){
-        System.out.println("Populating Database with Employee List...");
+        //System.out.println("Populating Database with Employee List...");
         for(EmployeeDTO employee: employeeList){
             insertSingleEmployee(employee, thisConnection);
         }
