@@ -1,0 +1,32 @@
+2020-12-18 11:09:47,023 INFO o.s.a.Starter [main] Program started
+2020-12-18 11:18:07,402 INFO o.s.a.Starter [main] Program started
+2020-12-18 11:18:11,059 INFO o.s.a.Starter [main] Time taken to read in data from csv: 3641 ms
+2020-12-18 11:18:12,486 INFO o.s.a.m.ThreadManager [main] Creating 20 threads
+2020-12-18 11:18:20,397 INFO o.s.a.m.ThreadManager [main] Time taken for threads to run: 7911 ms
+2020-12-18 11:18:20,397 INFO o.s.a.Starter [main] Time for total process: 12979 ms with 20 threads.
+2020-12-18 11:28:30,565 INFO o.s.a.Starter [main] Program started
+2020-12-18 11:28:35,662 INFO o.s.a.Starter [main] Time taken to read in data from csv: 5083 ms
+2020-12-18 11:28:37,819 INFO o.s.a.Starter [main] Time taken to connect to database: 2066 ms
+2020-12-18 11:28:37,820 INFO o.s.a.m.ThreadManager [main] Creating 20 threads
+2020-12-18 11:28:41,878 INFO o.s.a.m.EmployeeThread [Thread-8] Thread-8 complete! Took 3721 ms
+2020-12-18 11:28:42,063 INFO o.s.a.m.EmployeeThread [Thread-2] Thread-2 complete! Took 4059 ms
+2020-12-18 11:28:42,242 INFO o.s.a.m.EmployeeThread [Thread-6] Thread-6 complete! Took 4242 ms
+2020-12-18 11:28:42,604 INFO o.s.a.m.EmployeeThread [Thread-11] Thread-11 complete! Took 4417 ms
+2020-12-18 11:28:42,606 INFO o.s.a.m.EmployeeThread [Thread-14] Thread-14 complete! Took 4270 ms
+2020-12-18 11:28:42,608 INFO o.s.a.m.EmployeeThread [Thread-1] Thread-1 complete! Took 4677 ms
+2020-12-18 11:28:42,609 INFO o.s.a.m.EmployeeThread [Thread-3] Thread-3 complete! Took 4586 ms
+2020-12-18 11:28:42,625 INFO o.s.a.m.EmployeeThread [Thread-5] Thread-5 complete! Took 4621 ms
+2020-12-18 11:28:42,627 INFO o.s.a.m.EmployeeThread [Thread-12] Thread-12 complete! Took 4386 ms
+2020-12-18 11:28:42,641 INFO o.s.a.m.EmployeeThread [Thread-7] Thread-7 complete! Took 4649 ms
+2020-12-18 11:28:42,642 INFO o.s.a.m.EmployeeThread [Thread-9] Thread-9 complete! Took 4454 ms
+2020-12-18 11:28:42,642 INFO o.s.a.m.EmployeeThread [Thread-17] Thread-17 complete! Took 4143 ms
+2020-12-18 11:28:42,644 INFO o.s.a.m.EmployeeThread [Thread-19] Thread-19 complete! Took 3913 ms
+2020-12-18 11:28:42,645 INFO o.s.a.m.EmployeeThread [Thread-10] Thread-10 complete! Took 4555 ms
+2020-12-18 11:28:42,648 INFO o.s.a.m.EmployeeThread [Thread-16] Thread-16 complete! Took 3926 ms
+2020-12-18 11:28:42,657 INFO o.s.a.m.EmployeeThread [Thread-4] Thread-4 complete! Took 4739 ms
+2020-12-18 11:28:42,670 INFO o.s.a.m.EmployeeThread [Thread-13] Thread-13 complete! Took 4280 ms
+2020-12-18 11:28:42,691 INFO o.s.a.m.EmployeeThread [Thread-0] Thread-0 complete! Took 4683 ms
+2020-12-18 11:28:42,759 INFO o.s.a.m.EmployeeThread [Thread-18] Thread-18 complete! Took 4103 ms
+2020-12-18 11:28:42,857 INFO o.s.a.m.EmployeeThread [Thread-15] Thread-15 complete! Took 4413 ms
+2020-12-18 11:28:42,857 INFO o.s.a.m.ThreadManager [main] Time taken for threads to run: 5036 ms
+2020-12-18 11:28:42,858 INFO o.s.a.Starter [main] Time for total process: 12284 ms with 20 threads.

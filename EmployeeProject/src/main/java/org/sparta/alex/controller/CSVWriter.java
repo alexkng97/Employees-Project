@@ -9,11 +9,12 @@ import java.util.ArrayList;
 
 public class CSVWriter {
 
-    public static void writeListToFile(ArrayList<EmployeeDTO> employeeList){
+    public static void writeListToFile(ArrayList<EmployeeDTO> employeeList, String url){
 
-        String url = "src/main/resources/InvalidEmployeeRecords.csv";
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(url));
+            writer.write("Emp ID,Name Prefix,First Name,Middle Initial,Last Name,Gender,E Mail,Date of Birth,Date of Joining,Salary\n");
+
             for(EmployeeDTO employee : employeeList){
                 StringBuilder sb = new StringBuilder();
 

@@ -90,8 +90,8 @@ public class EmployeeRepository {
         System.out.println("\tAmount of duplicate records found: " + invalidList.size());
     }
 
-    public void writeInvalidToFile(){
-        CSVWriter.writeListToFile(invalidList);
+    public void writeInvalidToFile(String url ){
+        CSVWriter.writeListToFile(invalidList, url);
 
     }
 

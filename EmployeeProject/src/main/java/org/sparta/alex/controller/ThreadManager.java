@@ -1,4 +1,9 @@
-package org.sparta.alex.model;
+package org.sparta.alex.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.sparta.alex.model.EmployeeDTO;
+import org.sparta.alex.model.EmployeeThread;
 
 import java.util.ArrayList;
 
@@ -7,6 +12,8 @@ public class ThreadManager {
     private int size;
     private ArrayList<ArrayList<EmployeeDTO>> splitList;
     private ArrayList<EmployeeDTO> employeeList;
+
+    static Logger logger = LogManager.getLogger(ThreadManager.class);
 
     public ThreadManager(ArrayList<EmployeeDTO> employeeList, int size){
         this.size = size;
@@ -37,6 +44,7 @@ public class ThreadManager {
     }
 
     public void initAndRunThreads(){
+        logger.info("Creating " + size + " threads");
         try {
             employeeThreads = new Thread[size];
 
@@ -51,6 +59,8 @@ public class ThreadManager {
             }
 
             System.out.println("Time taken for threads to run: " + (System.currentTimeMillis() - start) + " ms");
+            logger.info("Time taken for threads to run: " + (System.currentTimeMillis() - start) + " ms");
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
