@@ -1,6 +1,6 @@
 # Employees-Project
 
-To run program, users should run Starter.java.
+To run program, users should run Starter.java and change the database url appropriately in both Starter.java and EmployeeThread.java.
 
 Users must have pre-existing empty database with an employees table with correct columns of:
   
