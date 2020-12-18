@@ -11,6 +11,8 @@ public class Starter {
 
 
     public static void main(String[] args) {
+        //URL FOR DATABASE:
+        String url = "jdbc:mysql://localhost:3306/tester";
 
         logger.info("Program started");
         long startTotal = System.currentTimeMillis();
@@ -32,7 +34,7 @@ public class Starter {
         employeeRepository.writeInvalidToFile("src/main/resources/InvalidEmployeeRecords.csv");
 
 
-        String url = "jdbc:mysql://localhost:3306/tester";
+
         long startConnection = System.currentTimeMillis();
         EmployeeDAO.connectToDB(url);
         System.out.println("Time taken to connect to database: " + (System.currentTimeMillis() - startConnection) + " ms");
