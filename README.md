@@ -1,4 +1,4 @@
-# Employees-Project
+# Employees Project
 
 To run program, users should run Starter.java.
 
