@@ -1,6 +1,8 @@
 # Employees-Project
 
-To run program, users should run Starter.java and change the database url appropriately in both Starter.java and EmployeeThread.java.
+To run program, users should run Starter.java.
+
+**IMPORTANT NOTE:** User should provide a **login.properties** file in _src/main/resources_, which should include their url, username and password for their database.
 
 Users must have pre-existing empty database with an employees table with correct columns of:
   
@@ -14,7 +16,7 @@ Java program that reads in a CSV file of employee records and filters out based 
 
 Program then writes the invalid employee records to CSV file for user to check: _"InvalidEmployeeRecords.csv"_
 
-User should provide a **login.properties** file in _src/main/resources_, which should include their username and password for their database.
+
 
 Program populates database with valid employee records using threads (current number of threads is set to 20).
 
