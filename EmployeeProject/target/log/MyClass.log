@@ -30,3 +30,11 @@
 2020-12-18 11:28:42,857 INFO o.s.a.m.EmployeeThread [Thread-15] Thread-15 complete! Took 4413 ms
 2020-12-18 11:28:42,857 INFO o.s.a.m.ThreadManager [main] Time taken for threads to run: 5036 ms
 2020-12-18 11:28:42,858 INFO o.s.a.Starter [main] Time for total process: 12284 ms with 20 threads.
+2020-12-18 13:42:27,086 INFO o.s.a.csvTests [main] CSV read and added employees successfully
+2020-12-18 13:44:34,536 INFO o.s.a.m.EmployeeRepository [main] Filtering employee list
+2020-12-18 13:44:34,569 INFO o.s.a.m.EmployeeRepository [main] Amount of duplicate records found: 2
+2020-12-18 13:44:34,575 INFO o.s.a.csvTests [main] Duplicate emails test successful
+2020-12-18 13:44:44,674 INFO o.s.a.m.EmployeeRepository [main] Filtering employee list
+2020-12-18 13:44:44,708 INFO o.s.a.m.EmployeeRepository [main] Amount of duplicate records found: 2
+2020-12-18 13:44:44,712 INFO o.s.a.csvTests [main] Duplicate IDs test successful
+2020-12-18 13:49:16,785 INFO o.s.a.csvTests [main] Invalid dates test successful

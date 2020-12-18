@@ -1,5 +1,7 @@
 package org.sparta.alex.model;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.sparta.alex.controller.CSVWriter;
 
 import java.util.*;
@@ -10,6 +12,8 @@ public class EmployeeRepository {
     private ArrayList<EmployeeDTO> invalidList;
     private Map<String,Integer> employeeIds;
     private Map<String,Integer> employeeEmails;
+
+    static Logger logger =  LogManager.getLogger(EmployeeRepository.class);
 
     public EmployeeRepository() {
         this.employeeList = new ArrayList<>();
@@ -58,14 +62,15 @@ public class EmployeeRepository {
 
         if(currentEmployee.getDateOfJoining().compareTo(currentEmployee.getDob()) < 0){
             invalidList.add(currentEmployee);
+
+        }else {
+            employeeList.add(currentEmployee);
         }
-
-        employeeList.add(currentEmployee);
-
 
     }
 
     public void filterEmployees(){
+        logger.info("Filtering employee list" );
         Map<String, Integer> duplicateIDs =
                 employeeIds.entrySet()
                 .stream()
@@ -88,6 +93,7 @@ public class EmployeeRepository {
         employeeList.removeAll(invalidList);
 
         System.out.println("\tAmount of duplicate records found: " + invalidList.size());
+        logger.info("Amount of duplicate records found: " + invalidList.size());
     }
 
     public void writeInvalidToFile(String url ){
