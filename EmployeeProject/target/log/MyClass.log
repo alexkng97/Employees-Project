@@ -38,3 +38,59 @@
 2020-12-18 13:44:44,708 INFO o.s.a.m.EmployeeRepository [main] Amount of duplicate records found: 2
 2020-12-18 13:44:44,712 INFO o.s.a.csvTests [main] Duplicate IDs test successful
 2020-12-18 13:49:16,785 INFO o.s.a.csvTests [main] Invalid dates test successful
+2020-12-18 20:40:39,782 INFO o.s.a.Starter [main] Program started
+2020-12-18 20:40:42,020 INFO o.s.a.Starter [main] Time taken to read in data from csv: 2231 ms
+2020-12-18 20:40:42,020 INFO o.s.a.m.EmployeeRepository [main] Filtering employee list
+2020-12-18 20:40:42,133 INFO o.s.a.m.EmployeeRepository [main] Amount of duplicate records found: 10
+2020-12-18 20:40:43,224 INFO o.s.a.Starter [main] Time taken to connect to database: 1087 ms
+2020-12-18 20:40:43,227 INFO o.s.a.c.ThreadManager [main] Creating 20 threads
+2020-12-18 20:40:49,010 INFO o.s.a.m.EmployeeThread [Thread-8] Thread-8 complete! Took 5343 ms
+2020-12-18 20:40:49,055 INFO o.s.a.m.EmployeeThread [Thread-15] Thread-15 complete! Took 5339 ms
+2020-12-18 20:40:49,530 INFO o.s.a.m.EmployeeThread [Thread-3] Thread-3 complete! Took 5881 ms
+2020-12-18 20:40:49,538 INFO o.s.a.m.EmployeeThread [Thread-19] Thread-19 complete! Took 5748 ms
+2020-12-18 20:40:49,567 INFO o.s.a.m.EmployeeThread [Thread-9] Thread-9 complete! Took 5918 ms
+2020-12-18 20:40:49,581 INFO o.s.a.m.EmployeeThread [Thread-14] Thread-14 complete! Took 5867 ms
+2020-12-18 20:40:49,644 INFO o.s.a.m.EmployeeThread [Thread-6] Thread-6 complete! Took 6078 ms
+2020-12-18 20:40:49,653 INFO o.s.a.m.EmployeeThread [Thread-16] Thread-16 complete! Took 5985 ms
+2020-12-18 20:40:49,663 INFO o.s.a.m.EmployeeThread [Thread-11] Thread-11 complete! Took 5973 ms
+2020-12-18 20:40:49,663 INFO o.s.a.m.EmployeeThread [Thread-18] Thread-18 complete! Took 5880 ms
+2020-12-18 20:40:49,686 INFO o.s.a.m.EmployeeThread [Thread-13] Thread-13 complete! Took 6145 ms
+2020-12-18 20:40:49,694 INFO o.s.a.m.EmployeeThread [Thread-5] Thread-5 complete! Took 6087 ms
+2020-12-18 20:40:49,731 INFO o.s.a.m.EmployeeThread [Thread-17] Thread-17 complete! Took 6051 ms
+2020-12-18 20:40:49,772 INFO o.s.a.m.EmployeeThread [Thread-7] Thread-7 complete! Took 6364 ms
+2020-12-18 20:40:49,803 INFO o.s.a.m.EmployeeThread [Thread-2] Thread-2 complete! Took 6316 ms
+2020-12-18 20:40:49,815 INFO o.s.a.m.EmployeeThread [Thread-10] Thread-10 complete! Took 6166 ms
+2020-12-18 20:40:49,831 INFO o.s.a.m.EmployeeThread [Thread-4] Thread-4 complete! Took 6184 ms
+2020-12-18 20:40:49,841 INFO o.s.a.m.EmployeeThread [Thread-0] Thread-0 complete! Took 6195 ms
+2020-12-18 20:40:49,873 INFO o.s.a.m.EmployeeThread [Thread-12] Thread-12 complete! Took 6170 ms
+2020-12-18 20:40:49,892 INFO o.s.a.m.EmployeeThread [Thread-1] Thread-1 complete! Took 6287 ms
+2020-12-18 20:40:49,892 INFO o.s.a.c.ThreadManager [main] Time taken for threads to run: 6665 ms
+2020-12-18 20:40:49,893 INFO o.s.a.Starter [main] Time for total process: 10104 ms with 20 threads.
+2020-12-18 20:42:27,755 INFO o.s.a.Starter [main] Program started
+2020-12-18 20:42:29,770 INFO o.s.a.Starter [main] Time taken to read in data from csv: 1997 ms
+2020-12-18 20:42:29,772 INFO o.s.a.m.EmployeeRepository [main] Filtering employee list
+2020-12-18 20:42:29,855 INFO o.s.a.m.EmployeeRepository [main] Amount of duplicate records found: 10
+2020-12-18 20:42:30,761 INFO o.s.a.Starter [main] Time taken to connect to database: 903 ms
+2020-12-18 20:42:30,762 INFO o.s.a.c.ThreadManager [main] Creating 20 threads
+2020-12-18 20:42:35,053 INFO o.s.a.m.EmployeeThread [Thread-7] Thread-7 complete! Took 3932 ms
+2020-12-18 20:42:35,288 INFO o.s.a.m.EmployeeThread [Thread-9] Thread-9 complete! Took 4253 ms
+2020-12-18 20:42:35,300 INFO o.s.a.m.EmployeeThread [Thread-6] Thread-6 complete! Took 4336 ms
+2020-12-18 20:42:35,328 INFO o.s.a.m.EmployeeThread [Thread-14] Thread-14 complete! Took 4187 ms
+2020-12-18 20:42:35,353 INFO o.s.a.m.EmployeeThread [Thread-13] Thread-13 complete! Took 4228 ms
+2020-12-18 20:42:35,365 INFO o.s.a.m.EmployeeThread [Thread-3] Thread-3 complete! Took 4399 ms
+2020-12-18 20:42:35,923 INFO o.s.a.m.EmployeeThread [Thread-17] Thread-17 complete! Took 4824 ms
+2020-12-18 20:42:35,950 INFO o.s.a.m.EmployeeThread [Thread-11] Thread-11 complete! Took 5002 ms
+2020-12-18 20:42:35,987 INFO o.s.a.m.EmployeeThread [Thread-4] Thread-4 complete! Took 5031 ms
+2020-12-18 20:42:36,019 INFO o.s.a.m.EmployeeThread [Thread-10] Thread-10 complete! Took 5036 ms
+2020-12-18 20:42:36,028 INFO o.s.a.m.EmployeeThread [Thread-5] Thread-5 complete! Took 5044 ms
+2020-12-18 20:42:36,041 INFO o.s.a.m.EmployeeThread [Thread-2] Thread-2 complete! Took 5013 ms
+2020-12-18 20:42:36,087 INFO o.s.a.m.EmployeeThread [Thread-18] Thread-18 complete! Took 4987 ms
+2020-12-18 20:42:36,094 INFO o.s.a.m.EmployeeThread [Thread-19] Thread-19 complete! Took 4952 ms
+2020-12-18 20:42:36,106 INFO o.s.a.m.EmployeeThread [Thread-12] Thread-12 complete! Took 5128 ms
+2020-12-18 20:42:36,132 INFO o.s.a.m.EmployeeThread [Thread-8] Thread-8 complete! Took 5104 ms
+2020-12-18 20:42:36,184 INFO o.s.a.m.EmployeeThread [Thread-15] Thread-15 complete! Took 5053 ms
+2020-12-18 20:42:36,244 INFO o.s.a.m.EmployeeThread [Thread-1] Thread-1 complete! Took 5301 ms
+2020-12-18 20:42:36,259 INFO o.s.a.m.EmployeeThread [Thread-16] Thread-16 complete! Took 5072 ms
+2020-12-18 20:42:36,288 INFO o.s.a.m.EmployeeThread [Thread-0] Thread-0 complete! Took 5305 ms
+2020-12-18 20:42:36,288 INFO o.s.a.c.ThreadManager [main] Time taken for threads to run: 5526 ms
+2020-12-18 20:42:36,288 INFO o.s.a.Starter [main] Time for total process: 8515 ms with 20 threads.

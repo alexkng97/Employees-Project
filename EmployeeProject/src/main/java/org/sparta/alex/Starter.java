@@ -6,18 +6,33 @@ import org.sparta.alex.controller.CSVReader;
 import org.sparta.alex.controller.ThreadManager;
 import org.sparta.alex.model.*;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 public class Starter {
     static Logger logger = LogManager.getLogger(Starter.class);
+    private static final Properties properties = new Properties();
+
+    private static void createProperties(){
+        try{
+            properties.load(new FileReader("src/main/resources/login.properties"));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
 
     public static void main(String[] args) {
+        createProperties();
         //URL FOR DATABASE:
-        String url = "jdbc:mysql://localhost:3306/tester";
+        String url = properties.getProperty("url");
 
         logger.info("Program started");
         long startTotal = System.currentTimeMillis();
         System.out.println("Reading in .csv file...");
         long startReadFile = System.currentTimeMillis();
+
         EmployeeRepository employeeRepository = CSVReader.readValues("src/main/resources/EmployeeRecordsLarge.csv");
         System.out.println("Time taken to read in data: " + (System.currentTimeMillis() - startReadFile) + " ms");
 
@@ -32,7 +47,6 @@ public class Starter {
 
         System.out.println("Writing invalid records to InvalidEmployeeRecords.csv...");
         employeeRepository.writeInvalidToFile("src/main/resources/InvalidEmployeeRecords.csv");
-
 
 
         long startConnection = System.currentTimeMillis();

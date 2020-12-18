@@ -37,11 +37,13 @@ public class EmployeeThread implements Runnable{
         createProperties();
         String username = properties.getProperty("username");
         String password = properties.getProperty("password");
+        String url = properties.getProperty("url");
+        url = url + "?rewriteBatchedStatements=true";
 
         System.out.println(Thread.currentThread().getName() + " started");
         long start = 0;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tester?rewriteBatchedStatements=true",username,password);
+            connection = DriverManager.getConnection(url,username,password);
             start = System.currentTimeMillis();
             EmployeeDAO.insertInBatches(employeeList,connection);
             connection.close();
