@@ -8,7 +8,7 @@ Users must have pre-existing empty database with an employees table with correct
   
 * emp_id, name_prefix, first_name, middle_initial, last_name, gender, email, dob, date_joined, salary 
 
-Insert operations and queries have been coded with the structure of database called "tester" and schema called "employees"
+Insert operations and queries have been implemented with the structure of database called "tester" and schema called "employees"
 
 Java program that reads in a CSV file of employee records and filters out based on:
 
